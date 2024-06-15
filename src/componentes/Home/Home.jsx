@@ -12,9 +12,9 @@ function Home() {
                         <button type="button" className="bg-blue-500 text-white px-12 py-1 h-13">Cadastre-se gratuitamente</button>
                     </div>
                 </div>
-                <div className="flex items-center"> 
-                    <input type="text" className="border border-gray-400 px-2 py-1 mr-2" />
-                    <input type="text" className="border border-gray-400 px-2 py-1 mr-2" />
+                <div className="flex items-center pt-36"> 
+                    <input type="text" className="border border-gray-400 px-2 py-1 rounded-lg" />
+                    <input type="text" className="border border-gray-400 px-2 py-1 rounded-lg" />
                     <button className="bg-blue-500 text-white px-4 py-1 rounded">Olá</button>
                 </div>
             </div>
