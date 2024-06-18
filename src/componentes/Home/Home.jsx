@@ -18,6 +18,27 @@ function Home() {
         descricao: 'Vaga de desenvolvedor sênior',
         data: '02-01-21',
         salario: 10000
+    },
+    {
+        id: '2131eqweqdads222we2321',
+        nome: 'desenvolvedor full-stack',
+        descricao: 'Vaga de desenvolvedor sênior',
+        data: '02-01-21',
+        salario: 10000
+    },
+    {
+        id: '2131eqwedadasdsads111111aqwe2321',
+        nome: 'desenvolvedor full-stack',
+        descricao: 'Vaga de desenvolvedor sênior',
+        data: '02-01-21',
+        salario: 10000
+    },
+    {
+        id: '2131eqweqwedasdsad4444a2321',
+        nome: 'desenvolvedor full-stack',
+        descricao: 'Vaga de desenvolvedor sênior',
+        data: '02-01-21',
+        salario: 10000
     }];
 
     const [selectedVaga, setSelectedVaga] = useState(null);
@@ -47,7 +68,7 @@ function Home() {
             </div>
 
             <div className="pt-96 flex">
-                <div className="w-1/2">
+                <div className="w-1/2 h-[500px] overflow-y-auto">
                     {vagas.map(vaga => (
                         <div key={vaga.id}
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
@@ -62,7 +83,7 @@ function Home() {
                     ))}
                 </div>
                 <div className="w-1/2 flex items-center justify-center">
-                    <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[900px] w-full h-[500px] overflow-y-auto mt-2">
+                    <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[900px] w-full h-[500px] overflow-y-auto mt-3">
                         {selectedVaga ? (
                             <div>
                                 <h2 className="text-2xl font-bold mb-2">{selectedVaga.nome}</h2>
