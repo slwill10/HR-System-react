@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import '../../index.css';
 import wolman from '../../assets/mulher mexendo no celular fundo verde.png';
-// import x from '../../assets/Xparasair.png';
 
 function Home() {
     const vagas = [{
@@ -62,7 +61,7 @@ function Home() {
                     <div className="h-12 border border-black hidden md:block"></div>
                     <div className="relative flex items-center w-full md:w-auto">
                         <input type="text" className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96" placeholder="Digite o cargo" />
-                        <button className="ml-10 bg-gray-300 text-black px-4 py-1 rounded h-14 mt-4 md:mt-0">Achar vaga</button>
+                        <button className="bg-blue-500 text-white px-4 py-1 rounded-3xl h-14 border ml-12">Achar vaga</button>
                     </div>
                 </div>
             </div>
