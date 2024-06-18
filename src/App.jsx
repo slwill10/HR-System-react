@@ -6,8 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 import {
-  Home, 
-  Test
+  Home
 } from "./componentes/"
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/test" element={<Test />} />
         </Routes>
       </div>
     </Router>

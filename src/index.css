@@ -21,3 +21,18 @@ code {
 .bg-custom-green {
   background-color: #66B873;
 }
+
+@media (max-width: 1395px) {
+  .hidden-above-1395 {
+      display: none;
+  }
+}
+
+.p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.span {
+  font-weight: normal;
+}
