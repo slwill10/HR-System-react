@@ -56,14 +56,15 @@ function Home() {
                 <div className="relative mt-3">
                     <hr className="border-solid border-t-1 border-black border-opacity-10 w-10/12 mx-auto md:w-5/12" />
                 </div>
-                <div className="flex flex-col items-center justify-center mt-8 space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:mt-32">
+                <div className="flex flex-col items-center justify-center mt-8 md:flex-row md:mt-32">
                     <input type="text" className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96" placeholder="Digite um estado ou cidade" />
                     <div className="h-12 border border-black hidden md:block"></div>
-                    <div className="relative flex items-center w-full md:w-auto">
-                        <input type="text" className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96" placeholder="Digite o cargo" />
-                        <button className="bg-blue-500 text-white px-4 py-1 rounded-3xl h-14 border ml-12">Achar vaga</button>
+                    <div class="relative flex items-center w-full md:w-auto">
+                        <input type="text" class="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96 pr-32" placeholder="Digite o cargo" />
+                        <button class="absolute right-2 bg-blue-500 text-white px-4 py-1 rounded-3xl h-12 border">Achar vaga</button>
                     </div>
                 </div>
+
             </div>
 
             <div className="pt-96 flex">
