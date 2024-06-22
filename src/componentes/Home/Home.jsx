@@ -24,16 +24,15 @@ function Home() {
     }, []);
 
     useEffect(() => {
+        const filtrarVagas = () => {
+            const filteredVagas = vagas.filter(vaga => 
+                (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
+                (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
+            );
+            setVagasFiltradas(filteredVagas);
+        };
         filtrarVagas(); 
     }, [filtroCidade, filtroCargo, vagas]);
-
-    const filtrarVagas = () => {
-        const filteredVagas = vagas.filter(vaga => 
-            (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
-            (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
-        );
-        setVagasFiltradas(filteredVagas);
-    };
 
     return (
         <div>
@@ -68,7 +67,16 @@ function Home() {
                         />
                         <button 
                             className="absolute right-2 bg-blue-500 text-white px-4 py-1 rounded-3xl h-12 border"
-                            onClick={filtrarVagas}
+                            onClick={() => {
+                                const filtrarVagas = () => {
+                                    const filteredVagas = vagas.filter(vaga => 
+                                        (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
+                                        (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
+                                    );
+                                    setVagasFiltradas(filteredVagas);
+                                };
+                                filtrarVagas();
+                            }}
                         >
                             Achar vaga
                         </button>
