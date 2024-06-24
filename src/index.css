@@ -24,7 +24,7 @@ code {
 
 @media (max-width: 1395px) {
   .hidden-above-1395 {
-      display: none;
+    display: none;
   }
 }
 
@@ -35,4 +35,27 @@ code {
 
 .span {
   font-weight: normal;
+}
+
+.txt-nome {
+  font-family: "Roboto", sans-serif;
+}
+
+.txt-empresa {
+  font-family: "Roboto", sans-serif;
+}
+
+.txt-descricao {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: .875rem;
+  font-weight: 400;
+}
+
+.txt-endereco {
+  font-family: "Roboto", sans-serif;
+}
+
+.txt-modalidade {
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px;
 }

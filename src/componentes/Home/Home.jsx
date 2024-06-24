@@ -90,11 +90,13 @@ function Home() {
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
                             onClick={() => setSelectedVaga(vaga)}>
                             <div>
-                                <p><span>{vaga.nome}</span></p>
-                                <p><span>{vaga.empresa}</span></p>
-                                <p><span>{vaga.descricao}</span></p>
-                                <p><span>{vaga.endereco}</span></p>
-                                <p><span>{vaga.modalidade}</span></p>                          
+                                <h1 class="txt-nome text-2xl">{vaga.nome}</h1>
+                                <p class="txt-empresa text-[#616161] font-bold"><span>{vaga.empresa}</span></p>
+                                <div class="flex mb-3">
+                                    <p class="text-base"><span>{vaga.endereco}</span></p>
+                                    <p class="text-base text-[#616161] ml-80">{vaga.modalidade}</p>
+                                </div>
+                                <p class="txt-descricao text-[#616161] text-sm text-justify"><span>{vaga.descricao}</span></p>
                             </div>
                         </div>
                     ))}
