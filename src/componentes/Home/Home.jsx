@@ -36,19 +36,19 @@ function Home() {
 
     return (
         <div>
-            <div className="bg-custom-green h-auto w-full fixed md:h-64 top-0 left-0">
+            <div className="bg-custom-green h-auto w-full fixed h-44 md:h-64 top-0 left-0 ">
                 <div className="fixed left-0 hidden-above-1395">
                     <img src={wolman} alt="" className=" ml-4 md:ml-32 h-60 mt-4" />
                 </div>
                 <div className="flex flex-col items-center justify-center mt-8 space-y-4 md:space-y-0 md:space-x-2 md:flex-row">
-                    <h1 className="text-4xl text-white mb-4 md:mb-0 md:mr-80">App RH</h1>
+                    <h1 className="text-4xl text-white mb-4 mt-[-34px] md:mb-0 md:mr-80">App RH</h1>
                     <button className="bg-transparent border border-white text-white px-2 py-1 h-13 w-20">Entrar</button>
                     <button className="bg-blue-500 text-white px-12 py-1 h-13 mt-4 md:mt-0">Cadastre-se gratuitamente</button>
                 </div>
                 <div className="relative mt-3">
                     <hr className="border-solid border-t-1 border-black border-opacity-10 w-10/12 mx-auto md:w-5/12" />
                 </div>
-                <div className="flex flex-col items-center justify-center mt-8 md:flex-row md:mt-30">
+                <div className="flex flex-col items-center justify-center md:flex-row md:mt-20">
                     <input
                         type="text"
                         className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96"
@@ -84,7 +84,7 @@ function Home() {
                 </div>
             </div>
             <div className="pt-96 flex flex-col md:flex-row">
-                <div className="w-full md:w-1/2 h-[650px] overflow-y-auto mt-[-120px] md:mt-[-120px]">
+                <div className="w-full md:w-1/3 h-[650px] overflow-y-auto mt-[-120px] md:mt-[-120px]">
                     {vagasFiltradas.map(vaga => (
                         <div key={vaga.codigo}
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
@@ -103,7 +103,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <div className={`fixed md:relative inset-0 md:inset-auto flex items-center justify-center bg-black bg-opacity-50 md:bg-transparent ${selectedVaga ? "block" : "hidden"} md:ml-[10%] md:mt-[-10%]`}>
+                <div className={`fixed md:relative inset-0 md:inset-auto flex items-center justify-center bg-black bg-opacity-50 md:bg-transparent ${selectedVaga ? "block" : "hidden"} md:ml-[20%] md:mt-[-10%]`}>
                     <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[500px] w-full h-[500px] overflow-y-auto mt-3">
                         {selectedVaga ? (
                             <div>
