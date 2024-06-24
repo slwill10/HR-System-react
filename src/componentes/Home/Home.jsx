@@ -38,7 +38,7 @@ function Home() {
         <div>
             <div className="bg-custom-green h-auto w-full fixed md:h-64 top-0 left-0">
                 <div className="fixed left-0 hidden-above-1395">
-                    <img src={wolman} alt="" className=" ml-4 md:ml-32 h-60" />
+                    <img src={wolman} alt="" className=" ml-4 md:ml-32 h-60 mt-4" />
                 </div>
                 <div className="flex flex-col items-center justify-center mt-8 space-y-4 md:space-y-0 md:space-x-2 md:flex-row">
                     <h1 className="text-4xl text-white mb-4 md:mb-0 md:mr-80">App RH</h1>
