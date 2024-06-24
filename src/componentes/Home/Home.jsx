@@ -36,9 +36,9 @@ function Home() {
 
     return (
         <div>
-            <div className="bg-custom-green h-auto w-full fixed md:h-96 top-0 left-0">
+            <div className="bg-custom-green h-auto w-full fixed md:h-64 top-0 left-0">
                 <div className="fixed left-0 hidden-above-1395">
-                    <img src={wolman} alt="" className="mt-3 ml-4 md:ml-32" />
+                    <img src={wolman} alt="" className=" ml-4 md:ml-32 h-60" />
                 </div>
                 <div className="flex flex-col items-center justify-center mt-8 space-y-4 md:space-y-0 md:space-x-2 md:flex-row">
                     <h1 className="text-4xl text-white mb-4 md:mb-0 md:mr-80">App RH</h1>
@@ -48,7 +48,7 @@ function Home() {
                 <div className="relative mt-3">
                     <hr className="border-solid border-t-1 border-black border-opacity-10 w-10/12 mx-auto md:w-5/12" />
                 </div>
-                <div className="flex flex-col items-center justify-center mt-8 md:flex-row md:mt-32">
+                <div className="flex flex-col items-center justify-center mt-8 md:flex-row md:mt-30">
                     <input
                         type="text"
                         className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96"
@@ -83,23 +83,23 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="pt-96 flex">
-                <div className="w-1/2 h-[500px] overflow-y-auto">
+            <div className="pt-96 flex ">
+                <div className="w-1/2 h-[500px] overflow-y-auto mt-[-50px]">
                     {vagasFiltradas.map(vaga => (
                         <div key={vaga.codigo}
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
                             onClick={() => setSelectedVaga(vaga)}>
                             <div>
-                                <p><strong>Nome da Vaga:</strong> <span>{vaga.nome}</span></p>
-                                <p><strong>Empresa:</strong> <span>{vaga.empresa}</span></p>
-                                <p><strong>Descrição:</strong> <span>{vaga.descricao}</span></p>
-                                <p><strong>Localidade:</strong> <span>{vaga.endereco}</span></p>
-                                <p><strong>Modalidade:</strong> <span>{vaga.modalidade}</span></p>                          
+                                <p><span>{vaga.nome}</span></p>
+                                <p><span>{vaga.empresa}</span></p>
+                                <p><span>{vaga.descricao}</span></p>
+                                <p><span>{vaga.endereco}</span></p>
+                                <p><span>{vaga.modalidade}</span></p>                          
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="w-1/2 flex items-center justify-center">
+                <div className="w-1/2 flex items-center justify-center mt-[-50px]">
                     <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[500px] w-full h-[500px] overflow-y-auto mt-3">
                         {selectedVaga ? (
                             <div>
