@@ -83,25 +83,27 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="pt-96 flex ">
-                <div className="w-1/2 h-[650px] overflow-y-auto mt-[-120px]">
+            <div className="pt-96 flex flex-col md:flex-row">
+                <div className="w-full md:w-1/2 h-[650px] overflow-y-auto mt-[-120px] md:mt-[-120px]">
                     {vagasFiltradas.map(vaga => (
                         <div key={vaga.codigo}
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
                             onClick={() => setSelectedVaga(vaga)}>
                             <div>
-                                <h1 class="txt-nome text-2xl">{vaga.nome}</h1>
-                                <p class="txt-empresa text-[#616161] font-bold"><span>{vaga.empresa}</span></p>
-                                <div class="flex mb-3">
-                                    <p class="text-base"><span>{vaga.endereco}</span></p>
-                                    <p class="text-base text-[#616161] ml-80">{vaga.modalidade}</p>
+                                <h1 className="txt-nome text-2xl">{vaga.nome}</h1>
+                                <p className="txt-empresa text-[#616161] font-bold"><span>{vaga.empresa}</span></p>
+                                <div className="flex mb-3">
+                                    <p className="text-base"><span>{vaga.endereco}</span></p>
                                 </div>
-                                <p class="txt-descricao text-[#616161] text-sm text-justify"><span>{vaga.descricao}</span></p>
+                                <div className="mt-[-40px] mb-5 ml-20">
+                                    <p className="text-base text-[#616161] ml-80 ">{vaga.modalidade}</p>
+                                </div>
+                                <p className="txt-descricao text-[#616161] text-sm text-justify"><span>{vaga.descricao}</span></p>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="w-1/2 flex items-center justify-center mt-[-120px]">
+                <div className={`fixed md:relative inset-0 md:inset-auto flex items-center justify-center bg-black bg-opacity-50 md:bg-transparent ${selectedVaga ? "block" : "hidden"} md:ml-[10%] md:mt-[-10%]`}>
                     <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[500px] w-full h-[500px] overflow-y-auto mt-3">
                         {selectedVaga ? (
                             <div>
@@ -114,6 +116,7 @@ function Home() {
                         ) : (
                             <h1 className="text-xl">Selecione uma vaga para ver os detalhes</h1>
                         )}
+                        <button className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded md:hidden" onClick={() => setSelectedVaga(null)}>Fechar</button>
                     </div>
                 </div>
             </div>
