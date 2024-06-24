@@ -84,7 +84,7 @@ function Home() {
                 </div>
             </div>
             <div className="pt-96 flex ">
-                <div className="w-1/2 h-[500px] overflow-y-auto mt-[-50px]">
+                <div className="w-1/2 h-[650px] overflow-y-auto mt-[-120px]">
                     {vagasFiltradas.map(vaga => (
                         <div key={vaga.codigo}
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
@@ -99,7 +99,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <div className="w-1/2 flex items-center justify-center mt-[-50px]">
+                <div className="w-1/2 flex items-center justify-center mt-[-120px]">
                     <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[500px] w-full h-[500px] overflow-y-auto mt-3">
                         {selectedVaga ? (
                             <div>
