@@ -15,7 +15,7 @@ function Home() {
             try {
                 const response = await api.get('/vagas');
                 setVagas(response.data);
-                setVagasFiltradas(response.data); 
+                setVagasFiltradas(response.data);
             } catch (error) {
                 console.error('There was an error making the request:', error);
             }
@@ -25,13 +25,13 @@ function Home() {
 
     useEffect(() => {
         const filtrarVagas = () => {
-            const filteredVagas = vagas.filter(vaga => 
+            const filteredVagas = vagas.filter(vaga =>
                 (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
                 (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
             );
             setVagasFiltradas(filteredVagas);
         };
-        filtrarVagas(); 
+        filtrarVagas();
     }, [filtroCidade, filtroCargo, vagas]);
 
     return (
@@ -49,27 +49,27 @@ function Home() {
                     <hr className="border-solid border-t-1 border-black border-opacity-10 w-10/12 mx-auto md:w-5/12" />
                 </div>
                 <div className="flex flex-col items-center justify-center mt-8 md:flex-row md:mt-32">
-                    <input 
-                        type="text" 
-                        className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96" 
+                    <input
+                        type="text"
+                        className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96"
                         placeholder="Digite um estado ou cidade"
                         value={filtroCidade}
                         onChange={(e) => setFiltroCidade(e.target.value)}
                     />
                     <div className="h-12 border border-black hidden md:block"></div>
                     <div className="relative flex items-center w-full md:w-auto">
-                        <input 
-                            type="text" 
-                            className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96 pr-32" 
+                        <input
+                            type="text"
+                            className="border border-gray-400 px-2 py-1 rounded-lg h-14 w-full md:w-96 pr-32"
                             placeholder="Digite o cargo"
                             value={filtroCargo}
                             onChange={(e) => setFiltroCargo(e.target.value)}
                         />
-                        <button 
+                        <button
                             className="absolute right-2 bg-blue-500 text-white px-4 py-1 rounded-3xl h-12 border"
                             onClick={() => {
                                 const filtrarVagas = () => {
-                                    const filteredVagas = vagas.filter(vaga => 
+                                    const filteredVagas = vagas.filter(vaga =>
                                         (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
                                         (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
                                     );
@@ -86,15 +86,15 @@ function Home() {
             <div className="pt-96 flex">
                 <div className="w-1/2 h-[500px] overflow-y-auto">
                     {vagasFiltradas.map(vaga => (
-                        <div key={vaga.codigo} 
+                        <div key={vaga.codigo}
                             className="flex justify-between bg-[#D9D9D9] m-2.5 p-2.5 rounded-xl cursor-pointer"
                             onClick={() => setSelectedVaga(vaga)}>
                             <div>
-                                <p><strong>Nome:</strong> <span>{vaga.nome}</span></p>
+                                <p><strong>Nome da Vaga:</strong> <span>{vaga.nome}</span></p>
+                                <p><strong>Empresa:</strong> <span>{vaga.empresa}</span></p>
                                 <p><strong>Descrição:</strong> <span>{vaga.descricao}</span></p>
-                                <p><strong>Data:</strong> <span>{vaga.data}</span></p>
-                                <p><strong>Salário:</strong> <span>{vaga.salario}</span></p>
-                                <p><strong>Localidade:</strong> {vaga.localidade}</p>
+                                <p><strong>Localidade:</strong> <span>{vaga.endereco}</span></p>
+                                <p><strong>Modalidade:</strong> <span>{vaga.modalidade}</span></p>                          
                             </div>
                         </div>
                     ))}
@@ -107,7 +107,7 @@ function Home() {
                                 <p><strong>Descrição:</strong> {selectedVaga.descricao}</p>
                                 <p><strong>Data:</strong> {selectedVaga.data}</p>
                                 <p><strong>Salário:</strong> {selectedVaga.salario}</p>
-                                <p><strong>Localidade:</strong> {selectedVaga.localidade}</p>
+                                <p><strong>Localidade:</strong> {selectedVaga.endereco}</p>
                             </div>
                         ) : (
                             <h1 className="text-xl">Selecione uma vaga para ver os detalhes</h1>
