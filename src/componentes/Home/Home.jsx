@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+// Home.js
+import React, { useState, useEffect } from 'react';
 import '../../index.css';
 import wolman from '../../assets/mulher mexendo no celular fundo verde.png';
-import api from '../../services/api';
+import { getVagas } from '../../services/api';
 
 function Home() {
     const [vagas, setVagas] = useState([]);
@@ -11,17 +12,19 @@ function Home() {
     const [vagasFiltradas, setVagasFiltradas] = useState([]);
 
     useEffect(() => {
-        const getVagas = async () => {
+        const fetchVagas = async () => {
             try {
-                const response = await api.get('/vagas');
-                setVagas(response.data);
-                setVagasFiltradas(response.data);
+                const data = await getVagas();
+                setVagas(data);
+                setVagasFiltradas(data);
             } catch (error) {
                 console.error('There was an error making the request:', error);
             }
         };
-        getVagas();
+
+        fetchVagas();
     }, []);
+
 
     useEffect(() => {
         const filtrarVagas = () => {
@@ -107,11 +110,22 @@ function Home() {
                     <div className="bg-[#D9D9D9] p-4 rounded-xl shadow-lg max-w-[500px] w-full h-[500px] overflow-y-auto mt-3">
                         {selectedVaga ? (
                             <div>
-                                <h2 className="text-2xl font-bold mb-2">{selectedVaga.nome}</h2>
-                                <p><strong>Descrição:</strong> {selectedVaga.descricao}</p>
-                                <p><strong>Data:</strong> {selectedVaga.data}</p>
-                                <p><strong>Salário:</strong> {selectedVaga.salario}</p>
-                                <p><strong>Localidade:</strong> {selectedVaga.endereco}</p>
+                                <div className="flex flex-col items-center">
+                                    <h2 className="text-2xl font-bold mb-2 text-center">{selectedVaga.nome}</h2>
+                                    <p className="txt-empresa text-[#616161] font-bold mt-1">{selectedVaga.empresa}</p>
+                                    <p className="txt-empresa text-[#616161] font-bold mt-1">R${selectedVaga.salario},00 (Bruto mensal)</p>
+                                    <hr className="border-solid border-t-2 #6b7280 w-full my-4" />
+                                </div>
+                                <div className="max-w-[600px]">
+                                    <p className='text-left'><b>Vagas: </b>{selectedVaga.numDeVagas}</p>
+                                    <p><b>Formação acadêmica:</b></p>
+                                    <p className="break-words">{selectedVaga.formacaoAcademica}</p>
+                                    <p><b>Responsabilidades e atribuições:</b></p>
+                                    <p className="break-words">{selectedVaga.responsabiidadesEAtribuicoes}</p>
+                                </div>
+                                <div className='flex flex-col items-center'>
+                                    <button className="bg-blue-500 text-white px-12 py-1 h-13 mt-4 md:mt-32">candidatar-me</button>
+                                </div>
                             </div>
                         ) : (
                             <h1 className="text-xl">Selecione uma vaga para ver os detalhes</h1>
