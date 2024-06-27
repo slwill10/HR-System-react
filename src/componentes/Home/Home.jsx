@@ -109,7 +109,7 @@ function Home() {
                                     <p className="break-words">{selectedVaga.responsabiidadesEAtribuicoes}</p>
                                 </div>
                                 <div className='flex flex-col items-center'>
-                                    <button className="bg-blue-500 text-white px-12 py-1 h-13 mt-4 md:mt-32">candidatar-me</button>
+                                    <button className="bg-blue-500 text-white px-12 py-1 h-13 mt-4 md:mt-32 rounded-lg ">candidatar-me</button>
                                 </div>
                             </div>
                         ) : (
