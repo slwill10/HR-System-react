@@ -1,4 +1,3 @@
-// Home.js
 import React, { useState, useEffect } from 'react';
 import '../../index.css';
 import wolman from '../../assets/mulher mexendo no celular fundo verde.png';
@@ -18,24 +17,12 @@ function Home() {
                 setVagas(data);
                 setVagasFiltradas(data);
             } catch (error) {
-                console.error('There was an error making the request:', error);
+                console.error('Houve um erro ao fazer a requisição:', error);
             }
         };
 
         fetchVagas();
     }, []);
-
-
-    useEffect(() => {
-        const filtrarVagas = () => {
-            const filteredVagas = vagas.filter(vaga =>
-                (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
-                (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
-            );
-            setVagasFiltradas(filteredVagas);
-        };
-        filtrarVagas();
-    }, [filtroCidade, filtroCargo, vagas]);
 
     return (
         <div>
@@ -71,20 +58,18 @@ function Home() {
                         <button
                             className="absolute right-2 bg-blue-500 text-white px-4 py-1 rounded-3xl h-12 border"
                             onClick={() => {
-                                const filtrarVagas = () => {
-                                    const filteredVagas = vagas.filter(vaga =>
-                                        (filtroCidade === '' || vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase())) &&
-                                        (filtroCargo === '' || vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase()))
-                                    );
-                                    setVagasFiltradas(filteredVagas);
-                                };
-                                filtrarVagas();
+                                const filteredVagas = vagas.filter(vaga =>
+                                    (!filtroCidade || (vaga.localidade && vaga.localidade.toLowerCase().includes(filtroCidade.toLowerCase()))) &&
+                                    (!filtroCargo || (vaga.nome && vaga.nome.toLowerCase().includes(filtroCargo.toLowerCase())))
+                                );
+                                setVagasFiltradas(filteredVagas);
                             }}
                         >
                             Achar vaga
                         </button>
                     </div>
                 </div>
+
             </div>
             <div className="pt-96 flex flex-col md:flex-row">
                 <div className="w-full md:w-1/3 h-[650px] overflow-y-auto mt-[-120px] md:mt-[-120px]">
