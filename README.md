@@ -1,4 +1,7 @@
 ![home hr system](https://github.com/slwill10/HR-System-react/assets/109486547/3e3f169b-9adf-4b3f-aa8b-2374197bfa9c)
+![login](https://github.com/slwill10/HR-System-react/assets/109486547/af236e12-fc36-4aea-9152-f109062987f9)
+![cadastro](https://github.com/slwill10/HR-System-react/assets/109486547/b48b268e-ed3f-4411-bc14-64e99fd95608)
+
 
 # Getting Started with Create React App
 
