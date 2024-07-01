@@ -1,3 +1,5 @@
+![home hr system](https://github.com/slwill10/HR-System-react/assets/109486547/3e3f169b-9adf-4b3f-aa8b-2374197bfa9c)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
